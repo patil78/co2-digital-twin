@@ -362,7 +362,7 @@ export default function Map() {
         const pct = ((delta / base) * 100).toFixed(1);
         const raw = selectedRegion.raw || {};
 
-        const aiRes = await fetch("${API_BASE}/ai-insights", {
+        const aiRes = await fetch(`${API_BASE}/ai-insights`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -398,7 +398,7 @@ export default function Map() {
       setOptimizerPrediction(null);
       setOptimizerError(null);
       try {
-        const res = await fetch("${API_BASE}/optimize", {
+        const res = await fetch(`${API_BASE}/optimize`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -447,7 +447,7 @@ export default function Map() {
         const delta = finalSimulatedCO2 - base;
         const pct = ((delta / base) * 100).toFixed(1);
         const raw = selectedRegion.raw || {};
-        const aiRes = await fetch("${API_BASE}/ai-insights", {
+        const aiRes = await fetch(`${API_BASE}/ai-insights`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
