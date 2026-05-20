@@ -239,6 +239,11 @@ async function getAirQualityData(lat, lon) {
   return responseData;
 }
 
+// 🟢 KEEP-AWAKE PING ROUTE (For UptimeRobot)
+app.get("/ping", (req, res) => {
+  res.status(200).send("OK");
+});
+
 // 🔥 MAIN ROUTE
 app.get("/aq", aqLimiter, async (req, res) => {
   const { lat, lon } = req.query;
