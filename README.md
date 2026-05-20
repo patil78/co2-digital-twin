@@ -10,15 +10,6 @@ Indian policymakers face a critical challenge: predicting the exact environmenta
 
 ---
 
-## Visuals
-*(Note: Upload screenshots here by dragging and dropping them into the GitHub editor)*
-
-- **[Insert Screenshot of the India Map Dashboard here]**
-- **[Insert Screenshot of the AI Analyst Insights here]**
-- **[Insert Screenshot of the Inverse Optimizer Math here]**
-
----
-
 ## Technical Skills Demonstrated
 - **Frontend:** React (Vite), React Hooks, Complex State Management, React-Leaflet (GeoJSON mapping).
 - **Backend:** Node.js, Express.js, RESTful API design, Middleware integration.
