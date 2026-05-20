@@ -35,6 +35,10 @@ async function geminiWithRetry(prompt, maxAttempts = 3) {
 const { fetchPopulation, classifyByPopulation } = require("./utils/getpopulation");
 
 const app = express();
+
+// 🚀 Fix for Render reverse proxy (required for express-rate-limit)
+app.set("trust proxy", 1);
+
 app.use(cors({
   origin: process.env.FRONTEND_URL || "*"
 }));
