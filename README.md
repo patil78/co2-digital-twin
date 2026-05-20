@@ -34,6 +34,7 @@ Indian policymakers face a critical challenge: predicting the exact environmenta
 - **Parallel Asynchronous Fetching:** Utilizes `Promise.all()` to fetch OpenAQ and OpenWeatherMap data concurrently, reducing total API network latency by ~60%.
 - **In-Memory Caching:** Implemented a custom Map-based caching mechanism with a 15-minute Time-To-Live (TTL) for API responses. This drastically reduces external API calls and improves load times.
 - **Rate Limiting & Security:** Integrated `express-rate-limit` to protect backend endpoints from DDoS, with strict limiters applied to the LLM routes (`/ai-insights`, `/optimize`) to prevent API budget exhaustion.
+- **Server Keep-Awake Polling:** Engineered a lightweight `/ping` endpoint polled every 5 minutes (via UptimeRobot) to prevent the Render backend from entering a "cold sleep" state, guaranteeing 0ms wake latency for users.
 - **Fault-Tolerant Fallback Logic:** Engineered a multi-tiered data validation system. If OpenAQ fails, the system gracefully degrades to OpenWeatherMap's AQI API. If both fail, it utilizes a deterministic generated fallback.
 
 ### 2. Mathematical Simulation Engine
